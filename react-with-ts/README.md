@@ -47,3 +47,37 @@ const Action = () => {
   );
 };
 ```
+
+## Discriminated Unions
+
+Typescript prop grouping to allow specific combinations of props.
+
+- Ex: InfoBox.tsx
+
+```tsx
+<>
+  <InfoBox mode="hint">hey I am chill</InfoBox>
+  <InfoBox mode="warning" severity="high">
+    hey I am NOT chill!!
+  </InfoBox>
+</>
+```
+
+## Wrapper Components
+
+Typescript leveraging generics to customize other components and pass the props the base has.
+
+- Ex: Input.tsx
+
+## Predicates and Limitations
+
+Typescript way to ensure the result type of a function and get intellisense.
+Limitation because it accepts two or more types and it doesn't necessarily provide feedback when using the component.
+
+- Ex: Button.tsx
+
+## Polymorphic Components
+
+The idea that through a prop we can make a component behave differently.
+
+- Ex: Container.tsx
