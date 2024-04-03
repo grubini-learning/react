@@ -1,7 +1,10 @@
+import { useRef } from "react";
 import { Form } from "./events";
-import { InfoBox, Input } from "./types";
+import { Container, InfoBox, Input, Search } from "./types";
 
 export const App = () => {
+  const ref = useRef(null);
+
   return (
     <div>
       <Form />
@@ -10,6 +13,10 @@ export const App = () => {
         hey I am NOT chill!!
       </InfoBox>
       <Input id="name" label="Your name" type="text" />
+      <Container as={"a"} href="#">
+        Hey
+      </Container>
+      <Search label="my search" id="searcher" ref={ref} />
     </div>
   );
 };

@@ -1,13 +1,16 @@
 import {
-  type PropsWithChildren,
   type ElementType,
   type ComponentPropsWithoutRef,
+  type ReactNode,
 } from "react";
 
-type ContainerProps<T extends ElementType> = PropsWithChildren<{
-  as: T;
-}> &
-  ComponentPropsWithoutRef<T>;
+interface Container<T extends ElementType> {
+  as?: T;
+  children: ReactNode;
+}
+
+type ContainerProps<T extends ElementType> = Container<T> &
+  Omit<ComponentPropsWithoutRef<T>, keyof Container<T>>;
 
 export const Container = <T extends ElementType>({
   as,

@@ -78,6 +78,12 @@ Limitation because it accepts two or more types and it doesn't necessarily provi
 
 ## Polymorphic Components
 
-The idea that through a prop we can make a component behave differently.
+The idea that through a prop we can make a component behave differently and pass their intended props with great auto completion.
 
 - Ex: Container.tsx
+
+## ForwardRef
+
+Used when we want to forward a reference to a ref from the parent and instantiated in the child
+
+- Ex: Search
