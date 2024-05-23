@@ -87,3 +87,9 @@ The idea that through a prop we can make a component behave differently and pass
 Used when we want to forward a reference to a ref from the parent and instantiated in the child
 
 - Ex: Search
+
+## useImperativeHandle
+
+To Expose API from the internal ref. \_HAS TO BE USED WITH FORWARDREF.
+
+- Ex: Formik.tsx

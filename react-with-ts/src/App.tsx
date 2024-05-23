@@ -1,9 +1,23 @@
 import { useRef } from "react";
 import { Form } from "./events";
-import { Container, InfoBox, Input, Search } from "./types";
+import {
+  Container,
+  InfoBox,
+  Input,
+  Search,
+  Formik,
+  type FormikAPI,
+} from "./types";
 
 export const App = () => {
-  const ref = useRef(null);
+  const appForm = useRef<FormikAPI>(null);
+  const ref = useRef<HTMLInputElement>(null);
+
+  const handleSave = (data: unknown) => {
+    const dta = data as { name: string; age: string };
+    console.log(dta);
+    appForm.current?.clear();
+  };
 
   return (
     <div>
@@ -17,6 +31,11 @@ export const App = () => {
         Hey
       </Container>
       <Search label="my search" id="searcher" ref={ref} />
+
+      <Formik ref={appForm} onSave={handleSave}>
+        <Input id="name" label="Your name" type="text" name="name" />
+        <Input id="age" label="Your age" type="number" name="age" />
+      </Formik>
     </div>
   );
 };
